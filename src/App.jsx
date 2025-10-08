@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const sectionStyle = {
+    padding: "40px",
+    margin: "20px",
+    borderRadius: "12px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+    backgroundColor: "#fff",
+  };
+
+  const headingStyle = {
+    fontSize: "24px",
+    color: "#232f3e",
+    marginBottom: "10px",
+  };
+
+  const textStyle = {
+    fontSize: "16px",
+    color: "#555",
+    lineHeight: "1.6",
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#f4f4f4", minHeight: "100vh", padding: "20px" }}>
+      {/* Amazon Section */}
+      <section style={{ ...sectionStyle, borderLeft: "6px solid #ff9900" }}>
+        <h2 style={headingStyle}>Amazon</h2>
+        <p style={textStyle}>
+          Amazon is one of the world’s largest e-commerce platforms, offering a vast selection of
+          products ranging from electronics and fashion to groceries and entertainment. Known for
+          its fast delivery, user-friendly interface, and Prime membership benefits, Amazon continues
+          to redefine online shopping experiences globally.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      </section>
+
+      {/* Flipkart Section */}
+      <section style={{ ...sectionStyle, borderLeft: "6px solid #2874f0" }}>
+        <h2 style={{ ...headingStyle, color: "#2874f0" }}>Flipkart</h2>
+        <p style={textStyle}>
+          Flipkart is one of India’s leading online marketplaces, known for offering affordable prices,
+          great discounts, and a wide range of products. With its “Big Billion Days” sale and focus on
+          customer satisfaction, Flipkart has become a household name in India’s e-commerce landscape.
+        </p>
+      </section>
+    </div>
+  );
 }
 
-export default App
+export default App;
